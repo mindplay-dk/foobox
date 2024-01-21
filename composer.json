@@ -1,0 +1,28 @@
+{
+    "name": "mindplay/foobox",
+    "description": "Container/provider experiments",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rasmus Schultz",
+            "email": "rasmus@mindplay.dk"
+        }
+    ],
+    "require-dev": {
+        "mindplay/testies": "^1.1.0@dev",
+        "mindplay/readable": "^1.2@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "mindplay\\foobox\\": "src"
+        }
+    },
+    "require": {
+        "php": "^8.2",
+        "psr/container": "^2.0"
+    },
+    "scripts": {
+        "test": "php test/test.php"
+    }
+}

@@ -1,0 +1,168 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "32ebebd34be7de09d669f94269f6c916",
+    "packages": [
+        {
+            "name": "psr/container",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/container.git",
+                "reference": "c71ecc56dfe541dbd90c5360474fbc405f8d5963"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/c71ecc56dfe541dbd90c5360474fbc405f8d5963",
+                "reference": "c71ecc56dfe541dbd90c5360474fbc405f8d5963",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Container\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "https://www.php-fig.org/"
+                }
+            ],
+            "description": "Common Container Interface (PHP FIG PSR-11)",
+            "homepage": "https://github.com/php-fig/container",
+            "keywords": [
+                "PSR-11",
+                "container",
+                "container-interface",
+                "container-interop",
+                "psr"
+            ],
+            "support": {
+                "issues": "https://github.com/php-fig/container/issues",
+                "source": "https://github.com/php-fig/container/tree/2.0.2"
+            },
+            "time": "2021-11-05T16:47:00+00:00"
+        }
+    ],
+    "packages-dev": [
+        {
+            "name": "mindplay/readable",
+            "version": "1.2.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mindplay-dk/readable.git",
+                "reference": "917aa44f07c8a7e279a9632f6144c2f38569d3e7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mindplay-dk/readable/zipball/917aa44f07c8a7e279a9632f6144c2f38569d3e7",
+                "reference": "917aa44f07c8a7e279a9632f6144c2f38569d3e7",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "mindplay/testies": "^1.0",
+                "phpunit/php-code-coverage": "^9.2.5"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Formats PHP values as human-readable strings",
+            "support": {
+                "issues": "https://github.com/mindplay-dk/readable/issues",
+                "source": "https://github.com/mindplay-dk/readable/tree/master"
+            },
+            "time": "2023-12-05T11:30:37+00:00"
+        },
+        {
+            "name": "mindplay/testies",
+            "version": "1.1.0.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mindplay-dk/testies.git",
+                "reference": "4c9659b17f91bb64b25778e1909ea24c323a053a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mindplay-dk/testies/zipball/4c9659b17f91bb64b25778e1909ea24c323a053a",
+                "reference": "4c9659b17f91bb64b25778e1909ea24c323a053a",
+                "shasum": ""
+            },
+            "require": {
+                "mindplay/readable": "^1.2@dev",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "nyholm/psr7": "^1.8",
+                "phpunit/php-code-coverage": "^10.1.7",
+                "zaphyr-org/http-client": "^1.0"
+            },
+            "suggest": {
+                "phpunit/php-code-coverage": "^10.1.7"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/test.func.php"
+                ],
+                "psr-4": {
+                    "mindplay\\testies\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rasmus Schultz",
+                    "email": "rasmus@mindplay.dk"
+                }
+            ],
+            "description": "Yeah, testies: a lightweight library for quick, simple unit-testing",
+            "support": {
+                "issues": "https://github.com/mindplay-dk/testies/issues",
+                "source": "https://github.com/mindplay-dk/testies/tree/1.1.0"
+            },
+            "time": "2023-12-14T17:30:41+00:00"
+        }
+    ],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "mindplay/testies": 20,
+        "mindplay/readable": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": "^8.2"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "2.6.0"
+}
