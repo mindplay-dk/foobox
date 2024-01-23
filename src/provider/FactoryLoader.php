@@ -16,7 +16,7 @@ use RuntimeException;
 abstract class FactoryLoader
 {
     /**
-     * @return iterable<string,[string,string],array<string,string>> map where service ID => [service provider callable, map of parameter names => service IDs]
+     * @return iterable<string,[[string,string],array<string,string>]> map where service ID => [service provider callable, map of parameter names => service IDs]
      */
     public static function load(string $className): iterable
     {
