@@ -2,7 +2,7 @@
 
 namespace mindplay\foobox\provider;
 
-use mindplay\foobox\ServiceProviderInterface;
+use Interop\Container\ServiceProviderInterface;
 use Psr\Container\ContainerInterface;
 
 class ConfigProvider implements ServiceProviderInterface
@@ -14,23 +14,19 @@ class ConfigProvider implements ServiceProviderInterface
         private array $values
     ) {}
 
-    public function getServiceKeys(): array
+    public function getFactories(): array
     {
-        return array_keys($this->values);
+        $factories = [];
+        
+        foreach ($this->values as $key => $value) {
+            $factories[$key] = fn() => $value;
+        }
+
+        return $factories;
     }
 
-    public function createService(string $id, ContainerInterface $container): mixed
+    public function getExtensions(): array
     {
-        return $this->values[$id] ?? null;
-    }
-
-    public function getExtensionKeys(): array
-    {
-        return []; // ...
-    }
-
-    public function extendService(string $id, ContainerInterface $container, mixed $previous): mixed
-    {
-        return null; // ...
+        return [];
     }
 }

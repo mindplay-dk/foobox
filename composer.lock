@@ -4,8 +4,45 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "32ebebd34be7de09d669f94269f6c916",
+    "content-hash": "eb5430675ce597f9d8de4e73a5446b0c",
     "packages": [
+        {
+            "name": "container-interop/service-provider",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/container-interop/service-provider.git",
+                "reference": "71e3975e02f53d2a97b3cb5730dd5147ef766a11"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/container-interop/service-provider/zipball/71e3975e02f53d2a97b3cb5730dd5147ef766a11",
+                "reference": "71e3975e02f53d2a97b3cb5730dd5147ef766a11",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">= 8.0.0",
+                "psr/container": "^1.0 || ^2.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Interop\\Container\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Promoting container interoperability through standard service providers",
+            "homepage": "https://github.com/container-interop/service-provider",
+            "support": {
+                "issues": "https://github.com/container-interop/service-provider/issues",
+                "source": "https://github.com/container-interop/service-provider/tree/master"
+            },
+            "time": "2024-01-14T09:18:37+00:00"
+        },
         {
             "name": "psr/container",
             "version": "2.0.2",
@@ -155,6 +192,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "container-interop/service-provider": 20,
         "mindplay/testies": 20,
         "mindplay/readable": 20
     },

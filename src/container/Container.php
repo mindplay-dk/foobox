@@ -2,7 +2,7 @@
 
 namespace mindplay\foobox\container;
 
-use mindplay\foobox\ServiceProviderInterface;
+use Interop\Container\ServiceProviderInterface;
 use Psr\Container\ContainerInterface;
 
 /**
@@ -11,9 +11,9 @@ use Psr\Container\ContainerInterface;
 class Container implements ContainerInterface
 {
     /**
-     * @var array<string,ServiceProviderInterface>
+     * @var array<string,callable(ContainerInterface):mixed>
      */
-    private array $providers = [];
+    private array $factories = [];
 
     /**
      * @var array<string,mixed>
@@ -30,14 +30,14 @@ class Container implements ContainerInterface
         //       improvement here still...
 
         foreach ($providers as $provider) {
-            $this->providers += array_fill_keys($provider->getServiceKeys(), $provider);
+            $this->factories += $provider->getFactories();
         }
     }
 
     public function get(string $id): mixed
     {
         if (! isset($this->instances[$id])) {
-            $this->instances[$id] = $this->providers[$id]->createService($id, $this);
+            $this->instances[$id] = $this->factories[$id]($this);
         }
 
         return $this->instances[$id];
@@ -45,6 +45,6 @@ class Container implements ContainerInterface
 
     public function has(string $id): bool
     {
-        return array_key_exists($id, $this->providers);
+        return array_key_exists($id, $this->factories);
     }
 }

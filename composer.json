@@ -20,7 +20,8 @@
     },
     "require": {
         "php": "^8.2",
-        "psr/container": "^2.0"
+        "psr/container": "^2.0",
+        "container-interop/service-provider": "dev-master"
     },
     "scripts": {
         "test": "php test/test.php"

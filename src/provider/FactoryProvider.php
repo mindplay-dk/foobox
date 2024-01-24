@@ -2,7 +2,7 @@
 
 namespace mindplay\foobox\provider;
 
-use mindplay\foobox\ServiceProviderInterface;
+use Interop\Container\ServiceProviderInterface;
 use Psr\Container\ContainerInterface;
 
 class FactoryProvider implements ServiceProviderInterface
@@ -19,33 +19,31 @@ class FactoryProvider implements ServiceProviderInterface
         }
     }
 
-    public function getServiceKeys(): array
+    public function getFactories(): array
     {
-        return array_keys($this->services);
-    }
+        $factories = [];
 
-    public function createService(string $id, ContainerInterface $container): mixed
-    {
-        [[$className, $methodName], $deps] = $this->services[$id];
+        foreach ($this->services as $id => $service) {
+            $factories[$id] = function (ContainerInterface $container) use ($service) {
+                [[$className, $methodName], $deps] = $service;
 
-        $params = [];
+                $params = [];
 
-        foreach ($deps as $paramName => $depID) {
-            if ($container->has($depID)) {
-                $params[$paramName] = $container->get($depID);
-            }
+                foreach ($deps as $paramName => $depID) {
+                    if ($container->has($depID)) {
+                        $params[$paramName] = $container->get($depID);
+                    }
+                }
+
+                return $className::$methodName(...$params);
+            };
         }
 
-        return $className::$methodName(...$params);
+        return $factories;
     }
 
-    public function getExtensionKeys(): array
+    public function getExtensions(): array
     {
         return []; // ...
-    }
-
-    public function extendService(string $id, ContainerInterface $container, mixed $previous): mixed
-    {
-        return null; // ...
     }
 }
