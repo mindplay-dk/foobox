@@ -10,8 +10,7 @@
         }
     ],
     "require-dev": {
-        "mindplay/testies": "^1.1.0@dev",
-        "mindplay/readable": "^1.2@dev"
+        "mindplay/testies": "^1.1"
     },
     "autoload": {
         "psr-4": {
